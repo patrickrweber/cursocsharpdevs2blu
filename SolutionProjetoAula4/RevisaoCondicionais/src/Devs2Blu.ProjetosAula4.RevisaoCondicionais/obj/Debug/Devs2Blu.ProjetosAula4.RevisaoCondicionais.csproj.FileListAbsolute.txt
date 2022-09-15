@@ -1,0 +1,7 @@
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\bin\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.exe.config
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\bin\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.exe
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\bin\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.pdb
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\obj\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.csproj.AssemblyReference.cache
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\obj\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.csproj.CoreCompileInputs.cache
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\obj\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.exe
+C:\Users\patri\source\repos\SolutionProjetoAula4\RevisaoCondicionais\src\Devs2Blu.ProjetosAula4.RevisaoCondicionais\obj\Debug\Devs2Blu.ProjetosAula4.RevisaoCondicionais.pdb

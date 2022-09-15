@@ -1,0 +1,7 @@
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\bin\Debug\Exercicios.IfeElse.exe.config
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\bin\Debug\Exercicios.IfeElse.exe
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\bin\Debug\Exercicios.IfeElse.pdb
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\obj\Debug\Exercicios.IfeElse.csproj.AssemblyReference.cache
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\obj\Debug\Exercicios.IfeElse.csproj.CoreCompileInputs.cache
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\obj\Debug\Exercicios.IfeElse.exe
+C:\Users\patri\source\repos\SolutionProjetoAula4\Exercicios.IfeElse\Exercicios.IfeElse\obj\Debug\Exercicios.IfeElse.pdb
