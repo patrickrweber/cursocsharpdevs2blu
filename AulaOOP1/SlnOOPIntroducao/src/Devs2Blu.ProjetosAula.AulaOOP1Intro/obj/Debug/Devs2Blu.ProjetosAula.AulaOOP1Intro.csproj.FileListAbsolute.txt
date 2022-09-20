@@ -1,0 +1,13 @@
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\bin\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.exe.config
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\bin\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.exe
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\bin\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.pdb
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\bin\Debug\Devs2Blu.ProjetosAula.Classes.dll
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\bin\Debug\Devs2Blu.ProjetosAula.Classes.pdb
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.csproj.AssemblyReference.cache
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.Form1.resources
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.Properties.Resources.resources
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.csproj.GenerateResource.cache
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.csproj.CoreCompileInputs.cache
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.csproj.CopyComplete
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.exe
+C:\Users\patri\source\repos\Devs2Blu\AulaOOP1\SlnOOPIntroducao\src\Devs2Blu.ProjetosAula.AulaOOP1Intro\obj\Debug\Devs2Blu.ProjetosAula.AulaOOP1Intro.pdb
