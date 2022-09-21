@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs2Blu.ProjetosAula.OOP3.Main", "src\Devs2Blu.ProjetosAula.OOP3.Main\Devs2Blu.ProjetosAula.OOP3.Main.csproj", "{C4BEB106-7785-4584-BCD8-28FE8ECCC7A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs2Blu.ProjetosAula.OOP3.Models", "src\Devs2Blu.ProjetosAula.OOP3.Models\Devs2Blu.ProjetosAula.OOP3.Models.csproj", "{5143AA87-5618-4720-A8E4-60D2A980EC0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4BEB106-7785-4584-BCD8-28FE8ECCC7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BEB106-7785-4584-BCD8-28FE8ECCC7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BEB106-7785-4584-BCD8-28FE8ECCC7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BEB106-7785-4584-BCD8-28FE8ECCC7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5143AA87-5618-4720-A8E4-60D2A980EC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5143AA87-5618-4720-A8E4-60D2A980EC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5143AA87-5618-4720-A8E4-60D2A980EC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5143AA87-5618-4720-A8E4-60D2A980EC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {807B03E1-F3D3-4F4A-81D4-241F7135CD7A}
+	EndGlobalSection
+EndGlobal
