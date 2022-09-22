@@ -1,4 +1,6 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Main.Utils;
+﻿using Devs2Blu.ProjetosAula.OOP3.Main.Cadastros;
+using Devs2Blu.ProjetosAula.OOP3.Main.Utils;
+using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 using System;
 using System.Collections.Generic;
@@ -10,28 +12,49 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
 {
     class Program
     {
-        public static Mocks Mock { get; set; }
+        public static Mocks mock { get; set; }
+
+        
         static void Main(string[] args)
         {
-            Mock = new Mocks();
-            ViewListPacientes();
+            TelaInicial();        
         }
-
-        public static void ViewListPacientes()
+        public static void TelaInicial()
         {
             Console.Clear();
-
-            foreach (Paciente paciente in Mock.ListaPacientes)
+            int opcao;
+            mock = new Mocks();
+            do
             {
-                Console.WriteLine("************************************");
-                Console.WriteLine($"Paciente: {paciente.CodigoPaciente}");
-                Console.WriteLine($"Nome: {paciente.Nome}");
-                Console.WriteLine($"CPF: {paciente.CGCCPF}");
-                Console.WriteLine($"Endereço: {paciente.Endereco}");
-                Console.WriteLine($"Convêncio: {paciente.Convenio}");
-                Console.WriteLine("************************************\n");
-            }
-            Console.ReadLine();
+                Console.WriteLine("---- Sistema de Gerenciamento de Clinicas ----");
+                Console.WriteLine("---- 10- Cadastro de Pacientes ----");
+                Console.WriteLine("---- 20- Cadastro de Médicos ----");
+                Console.WriteLine("---- 30- Cadastro de Recepcionistas ----"); ;
+                Console.WriteLine("---- 40- Cadastro de Fornecedores ----"); ;
+                Console.WriteLine("---- 50- Agenda ----"); ;
+                Console.WriteLine("---- 60- Prontuario ----"); ;
+                Console.WriteLine("---- 70- Financeiro ----"); ;
+                Console.WriteLine("-----------------------"); ;
+                Console.WriteLine("---- 0- Sair ----"); ;
+                Int32.TryParse(Console.ReadLine(), out opcao);
+
+                switch (opcao)
+                {
+                    case (int)MenuEnums.CAD_PAC:
+                        CadastroPaciente ModuloCadastroPaciente = new CadastroPaciente();
+                        ModuloCadastroPaciente.CadastrarPaciente();
+                        ModuloCadastroPaciente.MenuCadastro();
+                        break;
+                    case (int)MenuEnums.CAD_MED:
+                        CadastroMedico ModuloCadastroMedico = new CadastroMedico();
+                        ModuloCadastroMedico.CadastrarMedico();
+                        ModuloCadastroMedico.MenuCadastro();
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (opcao.Equals(MenuEnums.SAIR));
         }
     }
 }
