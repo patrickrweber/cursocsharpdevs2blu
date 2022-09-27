@@ -36,6 +36,10 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                         ListarMedico();
                         RetornarTela();
                         break;
+                    case (int)MenuEnums.CADASTRAR:
+                        CadastrarMedico();
+                        RetornarTela();
+                        break;
                     case (int)MenuEnums.SAIR:
                         Program.TelaInicial();
                         break;
@@ -63,7 +67,22 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
         }
         public void CadastrarMedico()
         {
+            Console.Clear();
+            Medico medico = new Medico();
 
+            Console.Write("Código do médico: ");
+            Int32.TryParse(Console.ReadLine(), out Int32 codigo);
+            medico.Codigo = codigo;
+            Console.Write("Nome do médico: ");
+            medico.Nome = Console.ReadLine(); 
+            Console.Write("CPF do médico: ");
+            medico.CGCCPF = Console.ReadLine();
+            Console.Write("CRM do médico: ");
+            medico.CRM = Int32.Parse(Console.ReadLine());
+            Console.Write("Especialidade do médico: ");
+            medico.Especialidade = Console.ReadLine();
+
+            Program.mock.ListaMedicos.Add(medico);
         }
         public void AlterarMedico()
         {

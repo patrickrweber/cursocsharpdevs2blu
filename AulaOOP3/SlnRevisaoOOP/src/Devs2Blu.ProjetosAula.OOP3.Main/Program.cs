@@ -12,9 +12,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
 {
     class Program
     {
-        public static Mocks mock { get; set; }
-
-        
+        public static Mocks mock { get; set; }        
         static void Main(string[] args)
         {
             TelaInicial();        
@@ -42,13 +40,18 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
                 {
                     case (int)MenuEnums.CAD_PAC:
                         CadastroPaciente ModuloCadastroPaciente = new CadastroPaciente();
-                        ModuloCadastroPaciente.CadastrarPaciente();
                         ModuloCadastroPaciente.MenuCadastro();
                         break;
                     case (int)MenuEnums.CAD_MED:
                         CadastroMedico ModuloCadastroMedico = new CadastroMedico();
-                        ModuloCadastroMedico.CadastrarMedico();
                         ModuloCadastroMedico.MenuCadastro();
+                        break; 
+                    case (int)MenuEnums.CAD_REC:
+                        CadastroRecepcionista ModuloCadastroRecepcionista = new CadastroRecepcionista();
+                        ModuloCadastroRecepcionista.MenuCadastro();
+                        break;
+                    case (int)MenuEnums.SAIR:
+                        Environment.Exit(0);
                         break;
                     default:
                         break;

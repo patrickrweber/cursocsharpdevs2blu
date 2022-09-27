@@ -27,6 +27,7 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         {
             CargaPaciente();
             CargaMedico();
+            CargaRecepcionista();
         }
 
         public  void CargaPaciente()
@@ -58,8 +59,26 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
             {
                 
                 Medico medico = new Medico(i, $"Medico {i}", $"{i}23{4}56{i}891{i}", 
-                    rd.Next(1,99999), especialidade[rd.Next(1, especialidade.Length)]);
+                    rd.Next(1,99999), especialidade[rd.Next(0, especialidade.Length)]);
                 ListaMedicos.Add(medico);
+            }
+        } 
+        public  void CargaRecepcionista()
+        {
+            string[] setor = new string[]
+            {
+                "Ala pediátrica",
+                "Ala ortopédica",
+                "Ala de cirurgia"
+            };
+            Random rd = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                
+                Recepcionista recepcionista = new Recepcionista(i, $"Recepcionista {i}", 
+                    $"{i}23{4}56{i}891{i}", setor[rd.Next(0, setor.Length)]);
+                ListaRecepcionistas.Add(recepcionista);
             }
         }
     }

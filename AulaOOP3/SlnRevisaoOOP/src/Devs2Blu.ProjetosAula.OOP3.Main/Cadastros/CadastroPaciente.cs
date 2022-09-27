@@ -36,6 +36,10 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                         ListarPaciente();
                         RetornarTela();
                         break;
+                    case (int)MenuEnums.CADASTRAR:
+                        CadastrarPaciente();
+                        RetornarTela();
+                        break;
                     case (int)MenuEnums.SAIR:
                         Program.TelaInicial();
                         break;
@@ -63,15 +67,26 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
         }
         public void CadastrarPaciente()
         {
+            Console.Clear();
+            Paciente paciente = new Paciente();
 
+            Console.Write("Código do paciente: ");
+            Int32.TryParse(Console.ReadLine(), out Int32 codigo);
+            paciente.Codigo = codigo;
+            Console.Write("Nome do paciente: ");
+            paciente.Nome = Console.ReadLine();
+            Console.Write("CPF do paciente: ");
+            paciente.CGCCPF = Console.ReadLine();
+            Console.Write("Convenio do paciente: ");
+            paciente.Convenio = Console.ReadLine();
+            Program.mock.ListaPacientes.Add(paciente);
         }
         public void AlterarPaciente()
         {
 
         }
-        public void ExcluirPaciente()
+        public void ExcluirPaciente(Paciente paciente)
         {
-
         }
         public void RetornarTela()
         {
