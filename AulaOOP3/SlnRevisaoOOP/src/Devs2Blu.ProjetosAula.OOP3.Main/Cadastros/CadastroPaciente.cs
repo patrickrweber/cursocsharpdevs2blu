@@ -3,54 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroPaciente
+    public class CadastroPaciente : IMenuCadastro
     {
         public CadastroPaciente()
         {
 
         }
-        public void MenuCadastro()
+        public Int32 MenuCadastro()
         {
             Console.Clear();
             Int32 opcao;
-            do
-            {
-                Console.WriteLine("---- Cadastro de Pacientes ----");
-                Console.WriteLine("---- 1- Lista de Pacientes ----");
-                Console.WriteLine("---- 2- Cadastro de Pacientes ----");
-                Console.WriteLine("---- 3- Alterar Pacientes ----");
-                Console.WriteLine("---- 4- Excluir Pacientes ----");
-                Console.WriteLine("---- 0- Retornar ----");
-
-                Int32.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarPaciente();
-                        RetornarTela();
-                        break;
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarPaciente();
-                        RetornarTela();
-                        break;
-                    case (int)MenuEnums.SAIR:
-                        Program.TelaInicial();
-                        break;
-                    default:
-                        break;
-                }
-
-            } while (!opcao.Equals(MenuEnums.SAIR));
+            Console.WriteLine("---- Cadastro de Pacientes ----");
+            Console.WriteLine("---- 1- Lista de Pacientes ----");
+            Console.WriteLine("---- 2- Cadastro de Pacientes ----");
+            Console.WriteLine("---- 3- Alterar Pacientes ----");
+            Console.WriteLine("---- 4- Excluir Pacientes ----");
+            Console.WriteLine("---- 0- Retornar ----");
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
         }
 
-        public void ListarPaciente()
+        public void Listar()
+        {
+            ListarPaciente();
+        }
+
+        public void Cadastrar()
+        {
+            Paciente paciente = new Paciente();
+            CadastrarPaciente(paciente);
+        }
+
+        public void Alterar()
+        {
+            Paciente paciente = new Paciente();
+            AlterarPaciente(paciente);
+        }
+
+        public void Excluir()
+        {
+            Paciente paciente = new Paciente();
+            ExcluirPaciente(paciente);
+        }
+
+        #region FACADE
+        private void ListarPaciente()
         {
             Console.Clear();
 
@@ -65,10 +69,9 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 Console.WriteLine("************************************\n");
             }
         }
-        public void CadastrarPaciente()
+        private void CadastrarPaciente(Paciente paciente)
         {
             Console.Clear();
-            Paciente paciente = new Paciente();
 
             Console.Write("Código do paciente: ");
             Int32.TryParse(Console.ReadLine(), out Int32 codigo);
@@ -81,18 +84,21 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             paciente.Convenio = Console.ReadLine();
             Program.mock.ListaPacientes.Add(paciente);
         }
-        public void AlterarPaciente()
+        private void AlterarPaciente(Paciente paciente)
         {
 
         }
-        public void ExcluirPaciente(Paciente paciente)
+        private void ExcluirPaciente(Paciente paciente)
         {
         }
-        public void RetornarTela()
+        #endregion
+        private void RetornarTela()
         {
             Console.WriteLine("Pressione qualquer tecla para retornar...");
             Console.ReadKey();
             MenuCadastro();
         }
+
+        
     }
 }
