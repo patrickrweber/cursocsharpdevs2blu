@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces
+namespace Devs2Blu.ProjetosAula.OOP3.Main.Interfaces
 {
     public interface IMenuCadastro
     {
@@ -14,6 +14,5 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces
         void Cadastrar();
         void Alterar();
         void Excluir();
-        void RetornarTela();
     }
 }

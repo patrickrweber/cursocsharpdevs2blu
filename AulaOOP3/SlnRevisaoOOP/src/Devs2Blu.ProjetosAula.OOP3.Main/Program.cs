@@ -67,15 +67,19 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main
                     {
                         case (int)MenuEnums.LISTAR:
                             menuCadastro.Listar();
+                            menuCadastro.RetornarTela();
                             break;
                         case (int)MenuEnums.CADASTRAR:
                             menuCadastro.Cadastrar();
+                            menuCadastro.RetornarTela();
                             break;
                         case (int)MenuEnums.ALTERAR:
                             menuCadastro.Alterar();
+                            menuCadastro.RetornarTela();
                             break;
                         case (int)MenuEnums.EXCLUIR:
                             menuCadastro.Excluir();
+                            menuCadastro.RetornarTela();
                             break;
                         default:
                             TelaInicial();

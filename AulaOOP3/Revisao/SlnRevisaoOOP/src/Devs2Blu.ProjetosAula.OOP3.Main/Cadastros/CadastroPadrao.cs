@@ -1,4 +1,4 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces;
+﻿using Devs2Blu.ProjetosAula.OOP3.Main.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +9,27 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
     public class CadastroPadrao : IMenuCadastro
     {
-        void IMenuCadastro.Alterar()
+        public void Alterar()
         {
             throw new NotImplementedException();
         }
 
-        void IMenuCadastro.Cadastrar()
+        public void Cadastrar()
         {
             throw new NotImplementedException();
         }
 
-        void IMenuCadastro.Excluir()
+        public void Excluir()
         {
             throw new NotImplementedException();
         }
 
-        void IMenuCadastro.Listar()
+        public void Listar()
         {
             throw new NotImplementedException();
         }
 
-        int IMenuCadastro.MenuCadastro()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IMenuCadastro.RetornarTela()
+        public int MenuCadastro()
         {
             throw new NotImplementedException();
         }
