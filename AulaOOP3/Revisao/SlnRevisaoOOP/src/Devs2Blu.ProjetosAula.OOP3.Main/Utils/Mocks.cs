@@ -27,6 +27,8 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         {
             CargaPacientes();
             CargaMedicos();
+            CargaRecepcionistas();
+            CargaFornecedores();
         }
 
         public void CargaPacientes()
@@ -42,10 +44,35 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Utils
         {
             Random rd = new Random();
             String[] especialidades = {"Clínico Geral", "Neurologista", "Ginecologista", "Pediatra"};
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Medico medico = new Medico(i, $"Médico {i + 1}", $"{i + rd.Next(0, 5)}23{i + rd.Next(0, 5)}56{i + rd.Next(0, 5)}891{i + rd.Next(0, 5)}",rd.Next(321, 789) , especialidades[rd.Next(0, 3)]);
                 ListaMedicos.Add(medico);
+            }
+        }
+        public void CargaRecepcionistas()
+        {
+            Random rd = new Random();
+            String[] setor = { "Centro cirúrgico", "Pediatria", "Oncologia", "Maternidade" };
+            for (int i = 0; i < 10; i++)
+            {
+                Recepcionista recepcionista = new Recepcionista(i, $"Recepcionista {i + 1}", $"{i + rd.Next(0, 4)}23{i + rd.Next(0, 5)}56{i + rd.Next(0, 5)}891{i + rd.Next(0, 5)}", setor[rd.Next(0, 3)]);
+                ListaRecepcionistas.Add(recepcionista);
+            }
+        }
+        public void CargaFornecedores()
+        {           
+            Random rd = new Random();
+            String[] tipoFornecedor =
+            {
+                "Abastecimento",
+                "Matéria Prima",
+                "Equipamentos"
+            };
+            for (int i = 0; i < 10; i++)
+            {
+                Fornecedor fornecedor = new Fornecedor(i, $"Fornecedor {i + 1}", $"{i + rd.Next(0, 4)}23{i + rd.Next(0, 5)}56{i + rd.Next(0, 5)}891{i + rd.Next(0, 5)}", tipoFornecedor[rd.Next(0, 2)]);
+                ListaFornecedores.Add(fornecedor);
             }
         }
     }

@@ -31,19 +31,16 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             }
             Console.ReadLine();
         }
-
         private void CadastrarPaciente(Paciente novoPaciente)
         {
             Program.Mock.ListaPacientes.Add(novoPaciente);
         }
-
         private void AlterarPaciente(Paciente paciente)
         {
             var pact = Program.Mock.ListaPacientes.Find(p => p.CodigoPaciente == paciente.CodigoPaciente);
             int index = Program.Mock.ListaPacientes.IndexOf(pact);
             Program.Mock.ListaPacientes[index] = paciente;
         }
-
         private void ExcluirPaciente(Paciente paciente)
         {
             Program.Mock.ListaPacientes.Remove(paciente);
@@ -56,7 +53,6 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             }
             Console.WriteLine("\n");
         }
-
 
         #region FACADE
         public Int32 MenuCadastro()
@@ -103,12 +99,11 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
         {
             Console.Clear();
             Paciente paciente;
-            int codigoPaciente;
 
             Console.WriteLine("Informe o Paciente que Deseja Alterar:\n");
             ListarPacientesByCodeAndName();
 
-            Int32.TryParse(Console.ReadLine(), out codigoPaciente);
+            Int32.TryParse(Console.ReadLine(), out int codigoPaciente);
 
             paciente = Program.Mock.ListaPacientes.Find(p => p.CodigoPaciente == codigoPaciente);
 
@@ -155,12 +150,11 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
         {
             Console.Clear();
             Paciente paciente;
-            int codigoPaciente;
 
             Console.WriteLine("Informe o Paciente que Deseja Excluir:\n");
             ListarPacientesByCodeAndName();
 
-            Int32.TryParse(Console.ReadLine(), out codigoPaciente);
+            Int32.TryParse(Console.ReadLine(), out int codigoPaciente);
 
             paciente = Program.Mock.ListaPacientes.Find(p => p.CodigoPaciente == codigoPaciente);
 
