@@ -1,4 +1,5 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
+﻿using Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces;
+using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 using System;
 using System.Collections.Generic;
@@ -8,45 +9,25 @@ using System.Threading.Tasks;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    class CadastroRecepcionista
+    class CadastroRecepcionista : IMenuCadastro
     {
         public CadastroRecepcionista()
         {
 
         }
-        public void MenuCadastro()
+        public Int32 MenuCadastro()
         {
             Console.Clear();
             Int32 opcao;
-            do
-            {
-                Console.WriteLine("---- Cadastro de Recepcionistas ----");
-                Console.WriteLine("---- 1- Lista de Recepcionistas ----");
-                Console.WriteLine("---- 2- Cadastro de Recepcionistas ----");
-                Console.WriteLine("---- 3- Alterar Recepcionistas ----");
-                Console.WriteLine("---- 4- Excluir Recepcionistas ----");
-                Console.WriteLine("---- 0- Retornar ----");
+            Console.WriteLine("---- Cadastro de Recepcionistas ----");
+            Console.WriteLine("---- 1- Lista de Recepcionistas ----");
+            Console.WriteLine("---- 2- Cadastro de Recepcionistas ----");
+            Console.WriteLine("---- 3- Alterar Recepcionistas ----");
+            Console.WriteLine("---- 4- Excluir Recepcionistas ----");
+            Console.WriteLine("---- 0- Retornar ----");
 
-                Int32.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarRecepcionista();
-                        RetornarTela();
-                        break; 
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarRecepcionista();
-                        RetornarTela();
-                        break;
-                    case (int)MenuEnums.SAIR:
-                        Program.TelaInicial();
-                        break;
-                    default:
-                        break;
-                }
-
-            } while (!opcao.Equals(MenuEnums.SAIR));
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
         }
 
         public void ListarRecepcionista()
@@ -80,11 +61,11 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 
             Program.mock.ListaRecepcionistas.Add(recepcionista);
         }
-        public void AlterarRecepcionista()
+        public void AlterarRecepcionista(Recepcionista recepcionista)
         {
 
         }
-        public void ExcluirRecepcionista()
+        public void ExcluirRecepcionista(Recepcionista recepcionista)
         {
 
         }
@@ -93,6 +74,28 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             Console.WriteLine("Pressione qualquer tecla para retornar...");
             Console.ReadKey();
             MenuCadastro();
+        }
+
+        public void  Listar()
+        {
+            ListarRecepcionista();
+        }
+
+        public void  Cadastrar()
+        {
+            CadastrarRecepcionista();
+        }
+
+        public void  Alterar()
+        {
+            Recepcionista recepcionista = new Recepcionista();
+            AlterarRecepcionista(recepcionista);
+        }
+
+        public void  Excluir()
+        {
+            Recepcionista recepcionista = new Recepcionista();
+            ExcluirRecepcionista(recepcionista);
         }
     }
 }

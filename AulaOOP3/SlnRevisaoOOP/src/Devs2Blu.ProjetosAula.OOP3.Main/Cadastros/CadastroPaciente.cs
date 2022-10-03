@@ -3,54 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Devs2Blu.ProjetosAula.OOP3.Main.Cadastros.Interfaces;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils;
 using Devs2Blu.ProjetosAula.OOP3.Main.Utils.Enums;
 using Devs2Blu.ProjetosAula.OOP3.Models.Model;
 
 namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
 {
-    public class CadastroPaciente
+    public class CadastroPaciente : IMenuCadastro
     {
         public CadastroPaciente()
         {
 
         }
-        public void MenuCadastro()
+        public Int32 MenuCadastro()
         {
             Console.Clear();
             Int32 opcao;
-            do
-            {
-                Console.WriteLine("---- Cadastro de Pacientes ----");
-                Console.WriteLine("---- 1- Lista de Pacientes ----");
-                Console.WriteLine("---- 2- Cadastro de Pacientes ----");
-                Console.WriteLine("---- 3- Alterar Pacientes ----");
-                Console.WriteLine("---- 4- Excluir Pacientes ----");
-                Console.WriteLine("---- 0- Retornar ----");
-
-                Int32.TryParse(Console.ReadLine(), out opcao);
-
-                switch (opcao)
-                {
-                    case (int)MenuEnums.LISTAR:
-                        ListarPaciente();
-                        RetornarTela();
-                        break;
-                    case (int)MenuEnums.CADASTRAR:
-                        CadastrarPaciente();
-                        RetornarTela();
-                        break;
-                    case (int)MenuEnums.SAIR:
-                        Program.TelaInicial();
-                        break;
-                    default:
-                        break;
-                }
-
-            } while (!opcao.Equals(MenuEnums.SAIR));
+            Console.WriteLine("---- Cadastro de Pacientes ----");
+            Console.WriteLine("---- 1- Lista de Pacientes ----");
+            Console.WriteLine("---- 2- Cadastro de Pacientes ----");
+            Console.WriteLine("---- 3- Alterar Pacientes ----");
+            Console.WriteLine("---- 4- Excluir Pacientes ----");
+            Console.WriteLine("---- 0- Retornar ----");
+            Int32.TryParse(Console.ReadLine(), out opcao);
+            return opcao;
         }
 
-        public void ListarPaciente()
+        public void Listar()
+        {
+            ListarPaciente();
+        }
+
+        public void Cadastrar()
+        {
+            CadastrarPaciente();
+        }
+
+        public void Alterar()
+        {
+            AlterarPaciente();
+        }
+
+        public void Excluir()
+        {
+            Paciente paciente = new Paciente();
+            ExcluirPaciente(paciente);
+        }
+
+
+        #region FACADE
+        private void ListarPacienteByCodeAndName()
+        {
+            Console.Clear();
+
+            foreach (Paciente paciente in Program.mock.ListaPacientes)
+            {
+                Console.Write($" | {paciente.CodigoPaciente} - Nome: { paciente.Nome}\n");
+            }
+            Console.WriteLine("Informe o código do paciente que deseja alterar: ");
+        }
+        private void ListarPaciente()
         {
             Console.Clear();
 
@@ -65,10 +78,10 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
                 Console.WriteLine("************************************\n");
             }
         }
-        public void CadastrarPaciente()
+        private void CadastrarPaciente()
         {
-            Console.Clear();
             Paciente paciente = new Paciente();
+            Console.Clear();
 
             Console.Write("Código do paciente: ");
             Int32.TryParse(Console.ReadLine(), out Int32 codigo);
@@ -81,18 +94,64 @@ namespace Devs2Blu.ProjetosAula.OOP3.Main.Cadastros
             paciente.Convenio = Console.ReadLine();
             Program.mock.ListaPacientes.Add(paciente);
         }
-        public void AlterarPaciente()
+        private void AlterarPaciente()
         {
+            Paciente paciente;
+            int codigoPaciente;
+            ListarPacienteByCodeAndName();
 
+            Int32.TryParse(Console.ReadLine(), out codigoPaciente);
+
+            paciente = Program.mock.ListaPacientes.Find(p => p.CodigoPaciente == codigoPaciente);
+
+            string opcaoAlterar;
+            bool alterar = true;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine($"Paciente:{paciente.CodigoPaciente}, " +
+                  $"Nome: {paciente.Nome}, CPF: {paciente.CGCCPF}, Convênio: {paciente.Convenio}");
+                Console.WriteLine("Qual campo deseja alterar? ");
+                Console.WriteLine("1 - Nome | 2 - CPF | 3 - Convênio");
+                opcaoAlterar = Console.ReadLine();
+                switch (opcaoAlterar)
+                {
+                    case "1":
+                        Console.WriteLine("Informe um novo nome:");
+                        paciente.Nome = Console.ReadLine();
+                        break;
+                    case "2":
+                        Console.WriteLine("Informe um novo CPF:");
+                        paciente.CGCCPF = Console.ReadLine();
+                        break;
+                    case "3":
+                        Console.WriteLine("Informe um novo convênio:");
+                        paciente.Convenio = Console.ReadLine();
+                        break;
+                    default:
+                        alterar = false;
+                        break;
+                }
+
+                if (alterar)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Dado alterado com sucesso!");
+                }
+            } while (alterar);
         }
-        public void ExcluirPaciente(Paciente paciente)
+        private void ExcluirPaciente(Paciente paciente)
         {
         }
+        #endregion
         public void RetornarTela()
         {
             Console.WriteLine("Pressione qualquer tecla para retornar...");
             Console.ReadKey();
             MenuCadastro();
         }
+
+        
     }
 }
