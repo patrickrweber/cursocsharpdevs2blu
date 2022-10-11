@@ -1,32 +1,49 @@
-﻿using Devs2Blu.ProjetosAula.OOP3.Models.Enum;
+﻿using Devs2Blu.ProjetosAula.SistemaCadastro.Enum;
+using Devs2Blu.ProjetosAula.SistemaCadastro.Models.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Devs2Blu.ProjetosAula.OOP3.Models.Model
+namespace Devs2Blu.ProjetosAula.SistemaCadastro.Models.Model
 {
-    public class Paciente : Pessoa
+    public class Paciente
     {
-        public Int32 CodigoPaciente { get; set; }
-        public String Convenio { get; set; }
+        public Int32 Id { get; set; }
+        public Pessoa Pessoa{ get; set; }
+        public Convenio Convenio { get; set; }
+        public Int32 NrProntuario{ get; set; }
+        public String PacienteRisco{ get; set; }
+        public FlStatus Status{ get; set; }
+        public Int32 FlObito{ get; set; }
 
         public Paciente()
         {
-            TipoPessoa = TipoPessoa.PF;
+            Pessoa = new Pessoa();
+            Convenio = new Convenio();
+            FlObito = 0;
+
+            Pessoa.TipoPessoa = TipoPessoa.PF;
         }
-
-        public Paciente(Int32 codigo, String nome, String cpf, String convenio)
+        public Paciente(int id, Pessoa pessoa, Convenio convenio, int nrProntuario, string pacienteRisco, FlStatus status, int flObito)
         {
-            Codigo = codigo;
-            Nome = nome;
-            CGCCPF = cpf;
-            TipoPessoa = TipoPessoa.PF;
+            Id = id;
+            Pessoa = pessoa;
             Convenio = convenio;
-
-            Random rd = new Random();
-            CodigoPaciente = Int32.Parse($"{codigo}{rd.Next(100,999)}");
+            NrProntuario = nrProntuario;
+            PacienteRisco = pacienteRisco;
+            Status = status;
+            FlObito = flObito;
+        }
+        public Paciente(Pessoa pessoa, Convenio convenio, int nrProntuario, string pacienteRisco)
+        {
+            Pessoa = pessoa;
+            Convenio = convenio;
+            NrProntuario = nrProntuario;
+            PacienteRisco = pacienteRisco;
+            Status = FlStatus.A;
+            FlObito = 0;
         }
     }
 }
