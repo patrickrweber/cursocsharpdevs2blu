@@ -10,14 +10,16 @@ namespace Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.Models
     {
         public Int32 Id { get; set; }
         public String Nome { get; set; }
+        public String Descricao { get; set; }
         public Estado()
         {
 
         }
-        public Estado(int id, string nome)
+        public Estado(int id, string nome, string descricao)
         {
             Id = id;
             Nome = nome;
+            Descricao = descricao;
         }
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\bin\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.dll
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\bin\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.pdb
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\obj\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.csproj.AssemblyReference.cache
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\obj\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.csproj.CoreCompileInputs.cache
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\obj\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.dll
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\obj\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.pdb
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\bin\Debug\Correios.dll
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\bin\Debug\Correios.pdb
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models\obj\Debug\Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.csproj.CopyComplete

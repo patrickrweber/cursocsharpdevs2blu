@@ -14,18 +14,22 @@ namespace Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.Models
         public String Local{ get; set; }
         public EnumDiaSemana DiaSemana{ get; set; }
         public EnumStatus Status{ get; set; }
+        public String Descricao{ get; set; }
+        public String Titulo{ get; set; }
         public Contato Contato { get; set; }
         public Compromisso()
         {
 
         }
-        public Compromisso(int id, DateTime data, string local, EnumDiaSemana diaSemana, EnumStatus status, Contato contato)
+        public Compromisso(int id, DateTime data, string local, EnumDiaSemana diaSemana, EnumStatus status, string descricao, string titulo, Contato contato)
         {
             Id = id;
             Data = data;
             Local = local;
             DiaSemana = diaSemana;
             Status = status;
+            Descricao = descricao;
+            Titulo = titulo;
             Contato = contato;
         }
     }
