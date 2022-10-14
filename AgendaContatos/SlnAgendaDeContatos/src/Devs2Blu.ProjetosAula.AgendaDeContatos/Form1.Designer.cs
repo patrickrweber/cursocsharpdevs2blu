@@ -31,6 +31,8 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvCadastro = new System.Windows.Forms.DataGridView();
+            this.dgvBtnExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvBtnEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,28 +54,15 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.txtLocal = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.dgvBtnExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvBtnEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvCompromisso = new System.Windows.Forms.DataGridView();
             this.dgvBtnExcluirCompromisso = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvBtnEditarCompromisso = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
+            this.btncCompromisso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastro)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +73,28 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.dgvCadastro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvBtnExcluir,
             this.dgvBtnEditar});
-            this.dgvCadastro.Location = new System.Drawing.Point(12, 204);
+            this.dgvCadastro.Location = new System.Drawing.Point(12, 160);
             this.dgvCadastro.Name = "dgvCadastro";
-            this.dgvCadastro.Size = new System.Drawing.Size(920, 231);
+            this.dgvCadastro.Size = new System.Drawing.Size(920, 253);
             this.dgvCadastro.TabIndex = 0;
             this.dgvCadastro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadastro_CellContentClick);
+            // 
+            // dgvBtnExcluir
+            // 
+            this.dgvBtnExcluir.HeaderText = "Excluir";
+            this.dgvBtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnExcluir.Image")));
+            this.dgvBtnExcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnExcluir.Name = "dgvBtnExcluir";
+            this.dgvBtnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBtnExcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvBtnExcluir.ToolTipText = "Clique aqui para excluir";
+            // 
+            // dgvBtnEditar
+            // 
+            this.dgvBtnEditar.HeaderText = "Editar";
+            this.dgvBtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnEditar.Image")));
+            this.dgvBtnEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnEditar.Name = "dgvBtnEditar";
             // 
             // groupBox1
             // 
@@ -114,14 +120,14 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(502, 150);
+            this.groupBox1.Size = new System.Drawing.Size(852, 112);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro Contato";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(64, 109);
+            this.txtEmail.Location = new System.Drawing.Point(64, 81);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(198, 20);
             this.txtEmail.TabIndex = 18;
@@ -129,7 +135,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 112);
+            this.label10.Location = new System.Drawing.Point(16, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 17;
@@ -138,7 +144,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // cboUF
             // 
             this.cboUF.FormattingEnabled = true;
-            this.cboUF.Location = new System.Drawing.Point(447, 22);
+            this.cboUF.Location = new System.Drawing.Point(568, 25);
             this.cboUF.Name = "cboUF";
             this.cboUF.Size = new System.Drawing.Size(39, 21);
             this.cboUF.TabIndex = 16;
@@ -146,7 +152,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(417, 26);
+            this.label9.Location = new System.Drawing.Point(538, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 15;
@@ -154,35 +160,35 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // 
             // txtRua
             // 
-            this.txtRua.Location = new System.Drawing.Point(317, 49);
+            this.txtRua.Location = new System.Drawing.Point(665, 26);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(169, 20);
             this.txtRua.TabIndex = 14;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(330, 102);
+            this.txtCidade.Location = new System.Drawing.Point(665, 54);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(156, 20);
+            this.txtCidade.Size = new System.Drawing.Size(169, 20);
             this.txtCidade.TabIndex = 13;
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(435, 77);
+            this.txtNumero.Location = new System.Drawing.Point(556, 55);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(51, 20);
             this.txtNumero.TabIndex = 12;
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(317, 76);
+            this.txtBairro.Location = new System.Drawing.Point(438, 54);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(67, 20);
             this.txtBairro.TabIndex = 11;
             // 
             // mskCep
             // 
-            this.mskCep.Location = new System.Drawing.Point(317, 22);
+            this.mskCep.Location = new System.Drawing.Point(438, 25);
             this.mskCep.Mask = "00000-000";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(94, 20);
@@ -198,7 +204,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // 
             // mskCelular
             // 
-            this.mskCelular.Location = new System.Drawing.Point(64, 80);
+            this.mskCelular.Location = new System.Drawing.Point(243, 55);
             this.mskCelular.Mask = "00 00000-0000";
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(100, 20);
@@ -215,7 +221,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(282, 109);
+            this.label8.Location = new System.Drawing.Point(617, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 6;
@@ -224,7 +230,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(282, 79);
+            this.label7.Location = new System.Drawing.Point(403, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 6;
@@ -233,7 +239,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(282, 52);
+            this.label6.Location = new System.Drawing.Point(630, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 5;
@@ -242,7 +248,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(390, 79);
+            this.label5.Location = new System.Drawing.Point(511, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 4;
@@ -251,7 +257,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 28);
+            this.label4.Location = new System.Drawing.Point(403, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 3;
@@ -260,7 +266,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 80);
+            this.label3.Location = new System.Drawing.Point(195, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 2;
@@ -284,102 +290,9 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cboDiaSemana);
-            this.groupBox2.Controls.Add(this.txtTitulo);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtDescricao);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.dtpData);
-            this.groupBox2.Controls.Add(this.txtLocal);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Location = new System.Drawing.Point(628, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(276, 159);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cadastro Compromisso";
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(64, 130);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(198, 20);
-            this.txtTitulo.TabIndex = 25;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 137);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Título:";
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(64, 104);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(198, 20);
-            this.txtDescricao.TabIndex = 23;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1, 107);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 13);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "Descrição:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1, 83);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(83, 13);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "Dia da Semana:";
-            // 
-            // dtpData
-            // 
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(63, 28);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(102, 20);
-            this.dtpData.TabIndex = 19;
-            // 
-            // txtLocal
-            // 
-            this.txtLocal.Location = new System.Drawing.Point(64, 54);
-            this.txtLocal.Name = "txtLocal";
-            this.txtLocal.Size = new System.Drawing.Size(198, 20);
-            this.txtLocal.TabIndex = 18;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Local:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(23, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Data:";
-            // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(12, 175);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 131);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 20;
@@ -389,7 +302,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(93, 175);
+            this.btnAlterar.Location = new System.Drawing.Point(93, 131);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 21;
@@ -399,7 +312,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(174, 175);
+            this.btnLimpar.Location = new System.Drawing.Point(174, 131);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 22;
@@ -407,32 +320,15 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // dgvBtnExcluir
-            // 
-            this.dgvBtnExcluir.HeaderText = "Excluir";
-            this.dgvBtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnExcluir.Image")));
-            this.dgvBtnExcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dgvBtnExcluir.Name = "dgvBtnExcluir";
-            this.dgvBtnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBtnExcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvBtnExcluir.ToolTipText = "Clique aqui para excluir";
-            // 
-            // dgvBtnEditar
-            // 
-            this.dgvBtnEditar.HeaderText = "Editar";
-            this.dgvBtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnEditar.Image")));
-            this.dgvBtnEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dgvBtnEditar.Name = "dgvBtnEditar";
-            // 
             // dgvCompromisso
             // 
             this.dgvCompromisso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompromisso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvBtnExcluirCompromisso,
             this.dgvBtnEditarCompromisso});
-            this.dgvCompromisso.Location = new System.Drawing.Point(12, 453);
+            this.dgvCompromisso.Location = new System.Drawing.Point(12, 419);
             this.dgvCompromisso.Name = "dgvCompromisso";
-            this.dgvCompromisso.Size = new System.Drawing.Size(920, 231);
+            this.dgvCompromisso.Size = new System.Drawing.Size(920, 265);
             this.dgvCompromisso.TabIndex = 23;
             this.dgvCompromisso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompromisso_CellContentClick);
             // 
@@ -453,32 +349,27 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.dgvBtnEditarCompromisso.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dgvBtnEditarCompromisso.Name = "dgvBtnEditarCompromisso";
             // 
-            // cboDiaSemana
+            // btncCompromisso
             // 
-            this.cboDiaSemana.FormattingEnabled = true;
-            this.cboDiaSemana.Items.AddRange(new object[] {
-            "DOMINGO",
-            "SEGUNDA",
-            "TERCA",
-            "QUARTA",
-            "QUINTA",
-            "SEXTA",
-            "SABADO"});
-            this.cboDiaSemana.Location = new System.Drawing.Point(91, 78);
-            this.cboDiaSemana.Name = "cboDiaSemana";
-            this.cboDiaSemana.Size = new System.Drawing.Size(171, 21);
-            this.cboDiaSemana.TabIndex = 26;
+            this.btncCompromisso.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btncCompromisso.Location = new System.Drawing.Point(255, 131);
+            this.btncCompromisso.Name = "btncCompromisso";
+            this.btncCompromisso.Size = new System.Drawing.Size(122, 23);
+            this.btncCompromisso.TabIndex = 24;
+            this.btncCompromisso.Text = "Inserir Compromisso";
+            this.btncCompromisso.UseVisualStyleBackColor = false;
+            this.btncCompromisso.Click += new System.EventHandler(this.btncCompromisso_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 715);
+            this.Controls.Add(this.btncCompromisso);
             this.Controls.Add(this.dgvCompromisso);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvCadastro);
             this.Name = "Form1";
@@ -487,8 +378,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastro)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisso)).EndInit();
             this.ResumeLayout(false);
 
@@ -518,16 +407,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboUF;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.TextBox txtLocal;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnLimpar;
@@ -536,7 +415,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         private System.Windows.Forms.DataGridView dgvCompromisso;
         private System.Windows.Forms.DataGridViewImageColumn dgvBtnExcluirCompromisso;
         private System.Windows.Forms.DataGridViewImageColumn dgvBtnEditarCompromisso;
-        private System.Windows.Forms.ComboBox cboDiaSemana;
+        private System.Windows.Forms.Button btncCompromisso;
     }
 }
 

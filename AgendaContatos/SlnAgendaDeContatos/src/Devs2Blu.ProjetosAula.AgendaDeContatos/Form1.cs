@@ -39,10 +39,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             mskCelular.Clear();
             mskTelefone.Clear();
             cboUF.Text = "";
-            cboDiaSemana.Text = "";
-            txtDescricao.Clear();
-            txtTitulo.Clear();
-            txtLocal.Clear();
         }
 
         #region Metodos Compromisso
@@ -50,24 +46,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         {
             var listCompromisso = CompromissoRepository.GetCompromissos();
             dgvCompromisso.DataSource = new BindingSource(listCompromisso, null);
-        }
-        private void CarregaCamposCompromisso(DataGridViewCellEventArgs e)
-        {
-           cboDiaSemana.Text = dgvCompromisso.Rows[e.RowIndex].Cells["diassemana"].Value.ToString();
-           txtDescricao.Text = dgvCompromisso.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
-           txtLocal.Text = dgvCompromisso.Rows[e.RowIndex].Cells["localcompromisso"].Value.ToString();
-           txtTitulo.Text = dgvCompromisso.Rows[e.RowIndex].Cells["titulo"].Value.ToString();
-           dtpData.Value = DateTime.Parse(dgvCompromisso.Rows[e.RowIndex].Cells["datacompromisso"].Value.ToString());
-        }
-        private Compromisso PopulaCompromissoForm()
-        {
-            CompromissoForm.DiaSemana = cboDiaSemana.SelectedText;
-            CompromissoForm.Descricao = txtDescricao.Text;
-            CompromissoForm.Titulo = txtTitulo.Text;
-            CompromissoForm.Local = txtLocal.Text;
-            CompromissoForm.Data = dtpData.Value;
-
-            return CompromissoForm;
         }
 
         #endregion
@@ -142,7 +120,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
 
         private void dgvCadastro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Int32.TryParse(dgvCadastro.Rows[e.RowIndex].Cells["id"].Value.ToString(), out int Id);
+            Id = Int32.Parse(dgvCadastro.Rows[e.RowIndex].Cells["id"].Value.ToString());
             if(dgvCadastro.Columns[e.ColumnIndex] == dgvCadastro.Columns["dgvBtnExcluir"])
             {
                 ContatoRepository.ExcluirContato(Id);
@@ -159,18 +137,26 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             IdCompromisso = Int32.Parse(dgvCompromisso.Rows[e.RowIndex].Cells["id"].Value.ToString());
             if (dgvCompromisso.Columns[e.ColumnIndex] == dgvCompromisso.Columns["dgvBtnExcluirCompromisso"])
             {
-                CompromissoRepository.ExcluirCompromissos(Id);
+                CompromissoRepository.ExcluirCompromissos(IdCompromisso);
             }
             if (dgvCompromisso.Columns[e.ColumnIndex] == dgvCompromisso.Columns["dgvBtnEditarCompromisso"])
             {
-                CarregaCamposCompromisso(e);
+                Compromisso compromisso = new Compromisso();
+                compromisso.Data = DateTime.Parse(dgvCompromisso.Rows[e.RowIndex].Cells["datacompromisso"].Value.ToString());
+                compromisso.DiaSemana = dgvCompromisso.Rows[e.RowIndex].Cells["diassemana"].Value.ToString();
+                compromisso.Descricao = dgvCompromisso.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+                compromisso.Local = dgvCompromisso.Rows[e.RowIndex].Cells["localCompromisso"].Value.ToString();
+                compromisso.Titulo = dgvCompromisso.Rows[e.RowIndex].Cells["titulo"].Value.ToString();
+                String nome = dgvCompromisso.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+                FormCompromisso formCompromisso = new FormCompromisso(nome, compromisso, IdCompromisso);
+                formCompromisso.ShowDialog();
             }
             PopulaGridCompromisso();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ContatoRepository.InserirContato(PopulaCompromissoForm(), PopulaContatoForm());
+            ContatoRepository.InserirContato(PopulaContatoForm());
             PopulaGrid();
             PopulaGridCompromisso();
             LimpaTela();
@@ -189,6 +175,20 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             PopulaGridCompromisso();
         }
 
-      
+        private void btncCompromisso_Click(object sender, EventArgs e)
+        {
+            if(Id == 0)
+            {
+                MessageBox.Show("Selecione um contato para inserir " +
+                    "o compromisso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormCompromisso formCompromisso = new FormCompromisso(txtNome.Text, Id);
+                formCompromisso.ShowDialog();
+            }
+            
+
+        }
     }
 }

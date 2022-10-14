@@ -11,12 +11,12 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos.Data
 {
     public class ContatoRepository
     {
-        public void InserirContato(Compromisso compromisso, Contato contato)
+        public void InserirContato(Contato contato)
         {
-            CompromissoRepository compromissoRepository = new CompromissoRepository();
+            MySqlConnection conn = ConnectionMySQL.GetConnection();
             try
             {
-                MySqlConnection conn = ConnectionMySQL.GetConnection();
+                
                 MySqlCommand cmd = new MySqlCommand(SQL_INSERT_CONTATO, conn);
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar, 45).Value = contato.Nome;
                 cmd.Parameters.Add("@telefone", MySqlDbType.VarChar, 19).Value = contato.Telefone;
@@ -30,7 +30,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos.Data
                 cmd.Parameters.Add("@uf", MySqlDbType.VarChar, 2).Value = contato.UF;
 
                 cmd.ExecuteReader();
-                compromissoRepository.InserirCompromisso(compromisso, contato.Id);
             }
             catch (MySqlException myEx)
             {
@@ -95,8 +94,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos.Data
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-        }
-        
+        }       
 
 
         #region SQL

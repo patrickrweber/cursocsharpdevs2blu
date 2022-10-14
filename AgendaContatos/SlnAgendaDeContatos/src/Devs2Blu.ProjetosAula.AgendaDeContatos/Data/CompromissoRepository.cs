@@ -70,8 +70,8 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos.Data
             {
                 MySqlCommand cmd = new MySqlCommand(SQL_UPDATE_COMPROMISSO, conn);
                 cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContato;
-                cmd.Parameters.Add("@datacompromisso", MySqlDbType.Date).Value = compromisso.Data;
-                cmd.Parameters.Add("@localcompromisso", MySqlDbType.Date).Value = compromisso.Local;
+                cmd.Parameters.Add("@datacompromisso", MySqlDbType.DateTime).Value = compromisso.Data;
+                cmd.Parameters.Add("@localcompromisso", MySqlDbType.VarChar, 45).Value = compromisso.Local;
                 cmd.Parameters.Add("@diassemana", MySqlDbType.VarChar, 45).Value = compromisso.DiaSemana;
                 cmd.Parameters.Add("@descricao", MySqlDbType.VarChar, 20).Value = compromisso.Descricao;
                 cmd.Parameters.Add("@titulo", MySqlDbType.VarChar, 45).Value = compromisso.Titulo;
@@ -113,7 +113,8 @@ com.datacompromisso,
 com.diassemana
 from contatos as con
 join compromissos as com
-on com.id_contatos = con.id";
+on com.id_contatos = con.id 
+order by id";
         const String SQL_DELETE_COMPROMISSO = @"Delete from compromissos where id_contatos = @id";
         const String SQL_UPDATE_COMPROMISSO = @"update compromissos set
 datacompromisso = @datacompromisso,

@@ -26,3 +26,4 @@ C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\src\Devs
 C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\src\Devs2Blu.ProjetosAula.AgendaDeContatos\obj\Debug\Devs2Blu.ProjetosAula.AgendaDeContatos.pdb
 C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\src\Devs2Blu.ProjetosAula.AgendaDeContatos\bin\Debug\Correios.dll
 C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\src\Devs2Blu.ProjetosAula.AgendaDeContatos\bin\Debug\Correios.pdb
+C:\Users\patri\source\repos\Devs2Blu\AgendaContatos\SlnAgendaDeContatos\src\Devs2Blu.ProjetosAula.AgendaDeContatos\obj\Debug\Devs2Blu.ProjetosAula.AgendaDeContatos.FormCompromisso.resources
