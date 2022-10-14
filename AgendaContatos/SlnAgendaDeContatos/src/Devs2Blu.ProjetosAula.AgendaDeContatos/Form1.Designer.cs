@@ -29,6 +29,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvCadastro = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtDataSemana = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.txtLocal = new System.Windows.Forms.TextBox();
@@ -65,19 +65,30 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.dgvBtnExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvBtnEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvCompromisso = new System.Windows.Forms.DataGridView();
+            this.dgvBtnExcluirCompromisso = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvBtnEditarCompromisso = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastro)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisso)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCadastro
             // 
+            this.dgvCadastro.AllowUserToOrderColumns = true;
             this.dgvCadastro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCadastro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBtnExcluir,
+            this.dgvBtnEditar});
             this.dgvCadastro.Location = new System.Drawing.Point(12, 204);
             this.dgvCadastro.Name = "dgvCadastro";
-            this.dgvCadastro.Size = new System.Drawing.Size(770, 352);
+            this.dgvCadastro.Size = new System.Drawing.Size(920, 231);
             this.dgvCadastro.TabIndex = 0;
+            this.dgvCadastro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadastro_CellContentClick);
             // 
             // groupBox1
             // 
@@ -275,17 +286,17 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboDiaSemana);
             this.groupBox2.Controls.Add(this.txtTitulo);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtDescricao);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.txtDataSemana);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.dtpData);
             this.groupBox2.Controls.Add(this.txtLocal);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Location = new System.Drawing.Point(520, 13);
+            this.groupBox2.Location = new System.Drawing.Point(628, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(276, 159);
             this.groupBox2.TabIndex = 19;
@@ -323,13 +334,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.label19.Size = new System.Drawing.Size(58, 13);
             this.label19.TabIndex = 22;
             this.label19.Text = "Descrição:";
-            // 
-            // txtDataSemana
-            // 
-            this.txtDataSemana.Location = new System.Drawing.Point(89, 77);
-            this.txtDataSemana.Name = "txtDataSemana";
-            this.txtDataSemana.Size = new System.Drawing.Size(173, 20);
-            this.txtDataSemana.TabIndex = 21;
             // 
             // label18
             // 
@@ -391,31 +395,86 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.btnAlterar.TabIndex = 21;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(255, 175);
+            this.btnLimpar.Location = new System.Drawing.Point(174, 175);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 22;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnExcluir
+            // dgvBtnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(174, 175);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 22;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.dgvBtnExcluir.HeaderText = "Excluir";
+            this.dgvBtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnExcluir.Image")));
+            this.dgvBtnExcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnExcluir.Name = "dgvBtnExcluir";
+            this.dgvBtnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBtnExcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvBtnExcluir.ToolTipText = "Clique aqui para excluir";
+            // 
+            // dgvBtnEditar
+            // 
+            this.dgvBtnEditar.HeaderText = "Editar";
+            this.dgvBtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnEditar.Image")));
+            this.dgvBtnEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnEditar.Name = "dgvBtnEditar";
+            // 
+            // dgvCompromisso
+            // 
+            this.dgvCompromisso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompromisso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBtnExcluirCompromisso,
+            this.dgvBtnEditarCompromisso});
+            this.dgvCompromisso.Location = new System.Drawing.Point(12, 453);
+            this.dgvCompromisso.Name = "dgvCompromisso";
+            this.dgvCompromisso.Size = new System.Drawing.Size(920, 231);
+            this.dgvCompromisso.TabIndex = 23;
+            this.dgvCompromisso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompromisso_CellContentClick);
+            // 
+            // dgvBtnExcluirCompromisso
+            // 
+            this.dgvBtnExcluirCompromisso.HeaderText = "Excluir";
+            this.dgvBtnExcluirCompromisso.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnExcluirCompromisso.Image")));
+            this.dgvBtnExcluirCompromisso.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnExcluirCompromisso.Name = "dgvBtnExcluirCompromisso";
+            this.dgvBtnExcluirCompromisso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBtnExcluirCompromisso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvBtnExcluirCompromisso.ToolTipText = "Clique aqui para excluir";
+            // 
+            // dgvBtnEditarCompromisso
+            // 
+            this.dgvBtnEditarCompromisso.HeaderText = "Editar";
+            this.dgvBtnEditarCompromisso.Image = ((System.Drawing.Image)(resources.GetObject("dgvBtnEditarCompromisso.Image")));
+            this.dgvBtnEditarCompromisso.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dgvBtnEditarCompromisso.Name = "dgvBtnEditarCompromisso";
+            // 
+            // cboDiaSemana
+            // 
+            this.cboDiaSemana.FormattingEnabled = true;
+            this.cboDiaSemana.Items.AddRange(new object[] {
+            "DOMINGO",
+            "SEGUNDA",
+            "TERCA",
+            "QUARTA",
+            "QUINTA",
+            "SEXTA",
+            "SABADO"});
+            this.cboDiaSemana.Location = new System.Drawing.Point(91, 78);
+            this.cboDiaSemana.Name = "cboDiaSemana";
+            this.cboDiaSemana.Size = new System.Drawing.Size(171, 21);
+            this.cboDiaSemana.TabIndex = 26;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 560);
-            this.Controls.Add(this.btnExcluir);
+            this.ClientSize = new System.Drawing.Size(944, 715);
+            this.Controls.Add(this.dgvCompromisso);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSalvar);
@@ -430,6 +489,7 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +523,6 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtDataSemana;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DateTimePicker dtpData;
         private System.Windows.Forms.TextBox txtLocal;
@@ -472,7 +531,12 @@ namespace Devs2Blu.ProjetosAula.AgendaDeContatos
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridViewImageColumn dgvBtnExcluir;
+        private System.Windows.Forms.DataGridViewImageColumn dgvBtnEditar;
+        private System.Windows.Forms.DataGridView dgvCompromisso;
+        private System.Windows.Forms.DataGridViewImageColumn dgvBtnExcluirCompromisso;
+        private System.Windows.Forms.DataGridViewImageColumn dgvBtnEditarCompromisso;
+        private System.Windows.Forms.ComboBox cboDiaSemana;
     }
 }
 

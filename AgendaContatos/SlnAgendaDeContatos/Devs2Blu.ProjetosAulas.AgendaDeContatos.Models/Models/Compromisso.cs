@@ -12,7 +12,7 @@ namespace Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.Models
         public Int32 Id { get; set; }
         public DateTime Data { get; set; }
         public String Local{ get; set; }
-        public EnumDiaSemana DiaSemana{ get; set; }
+        public String DiaSemana{ get; set; }
         public EnumStatus Status{ get; set; }
         public String Descricao{ get; set; }
         public String Titulo{ get; set; }
@@ -21,7 +21,7 @@ namespace Devs2Blu.ProjetosAulas.AgendaDeContatos.Models.Models
         {
 
         }
-        public Compromisso(int id, DateTime data, string local, EnumDiaSemana diaSemana, EnumStatus status, string descricao, string titulo, Contato contato)
+        public Compromisso(int id, DateTime data, string local, String diaSemana, EnumStatus status, string descricao, string titulo, Contato contato)
         {
             Id = id;
             Data = data;

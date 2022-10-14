@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\EnumDiaSemana.cs" />
     <Compile Include="Enum\EnumStatus.cs" />
     <Compile Include="Models\Compromisso.cs" />
     <Compile Include="Models\Contato.cs" />
