@@ -1,0 +1,36 @@
+.logo{
+    height: 100px;
+}
+
+#modal-body{
+    background-color:  blue;
+}
+
+
+
+.card-list{
+    border: 16px solid blue;
+    margin: 20px;
+    opacity: 0.5;
+}
+
+.card-list:hover{
+    opacity: 1;
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.1);
+}
+
+.card-header{
+    
+    text-align: center;
+    background-color: white;
+}
+
+
+
+.card-img-top{
+    opacity: 1;
+    height: 20vw;
+}
+

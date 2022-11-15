@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Devs2Blu.ProjetosAula.OOP3.Models.Model
+namespace Devs2Blu.ProjetosAula.SistemaCadastro.Models.Model
 {
     public class ContaPaciente
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Devs2Blu.ProjetosAula.OOP3.Models.Enum
+namespace Devs2Blu.ProjetosAula.SistemaCadastro.Enum
 {
     public enum TipoPessoa
     {
