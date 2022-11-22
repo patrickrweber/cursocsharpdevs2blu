@@ -1,7 +1,15 @@
 const URL_API_CHARACTER = 'https://bobsburgers-api.herokuapp.com/characters/?limit=15'
 
-function getElement(q) {
-    return document.querySelector(q);
+var scripts = $('#scripts').clone();
+/* # Functions*/
+const getPagina = (url, target) => {
+    $.ajax({
+        url: `_html/${url}`,
+        dataType: 'html',
+        success: (pagina) => {
+            $(target).html(pagina);
+        }
+    });
 }
 
 const getAPI = (url, functionCallback) => {

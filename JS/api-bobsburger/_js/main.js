@@ -1,8 +1,28 @@
 var listCharacter = new Array();
 
+$(document).ready(() => {
+    $("#btn-home").ready((e) => {
+      getPagina("index.html", "main");
+    });
+  
+    $("#btn-galeria").click((e) => {
+      getPagina("galeria.html", "main");
+    });
+  
+    $("#btn-home").click((e) => {
+      getPagina("index.html", "main");
+    });
+  
+    $("#btn-home-logo").click((e) => {
+      getPagina("index.html", "main");
+    });
+  });
+
 addEventListener('load', function(){
     getAPI(URL_API_CHARACTER, criaListaCharacter);
 });
+
+
 
 
 const criaListaCharacter = (data) => {
